@@ -1,0 +1,22 @@
+# Set default behaviour, in case users don't have core.autocrlf set.
+# * text=auto  - disabled due to bottom line of http://timclem.wordpress.com/2012/03/01/mind-the-end-of-your-line/
+
+# Explicitly declare text files we want to always be normalized and converted
+# to native line endings on checkout.
+
+*.xml text
+*.yml text
+*.cfg text
+*.ini text
+*.config text
+
+*.pom text
+*.java text
+*.scala text
+*.sbt text
+
+
+# Denote all files that are truly binary and should not be modified.
+*.png binary
+*.gif binary
+*.jpg binary

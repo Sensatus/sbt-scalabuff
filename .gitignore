@@ -2,3 +2,20 @@ target
 boot
 lib_managed
 _build
+
+# General
+*.log
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+dataSources.ids
+datasources.xml
+
+# Mac
+.DS_Store

@@ -17,8 +17,8 @@ object ScalaBuffPlugin extends Plugin {
   lazy val scalabuffSettings = Seq[Project.Setting[_]](
     scalabuffArgs := Seq(),
     scalabuffMain := "net.sandrogrzicic.scalabuff.compiler.ScalaBuff",
-    scalabuffVersion := "1.3.6",
-    libraryDependencies <++= (scalabuffVersion in ScalaBuff)(version => 
+    scalabuffVersion := "1.3.8",
+    libraryDependencies <++= (scalabuffVersion in ScalaBuff)(version =>
       Seq(
         "net.sandrogrzicic" %% "scalabuff-compiler" % version % ScalaBuff.name,
         "net.sandrogrzicic" %% "scalabuff-runtime" % version
@@ -56,7 +56,7 @@ object ScalaBuffPlugin extends Plugin {
   ): Seq[File] = {
     val input = source / "protobuf"
     if (input.exists) {
-      val output = sourceManaged / "scala"
+      val output = sourceManaged / "main"
       val cached = FileFunction.cached(cache / "scalabuff", FilesInfo.lastModified, FilesInfo.exists) {
         (in: Set[File]) => {
           IO.delete(output)
